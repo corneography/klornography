@@ -15,6 +15,7 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/pointing.h>
 
 #define BASE   0
 #define LOWER  1
@@ -31,6 +32,20 @@
             quick_tap_ms = <0>;
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
+        };
+
+        enc_msc_vert: enc_msc_vert {
+            compatible = "zmk,behavior-sensor-rotate";
+            label = "ENC_MSC_VERT";
+            #sensor-binding-cells = <0>;
+            bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
+        };
+
+        enc_msc_hori: enc_msc_hori {
+            compatible = "zmk,behavior-sensor-rotate";
+            label = "ENC_MSC_HORI";
+            #sensor-binding-cells = <0>;
+            bindings = <&msc SCRL_LEFT>, <&msc SCRL_RIGHT>;
         };
     };
 
@@ -340,9 +355,7 @@
                             &trans     &trans         &trans   &trans  &trans  &trans  &trans  &trans
             >;
 
-            sensor-bindings =
-                <&inc_dec_kp C_AC_SCROLL_DOWN C_AC_SCROLL_UP>,
-                <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+            sensor-bindings = <&enc_msc_vert>, <&enc_msc_hori>;
         };
 
         r_pinky {

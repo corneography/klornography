@@ -355,7 +355,9 @@
                             &trans     &trans         &trans   &trans  &trans  &trans  &trans  &trans
             >;
 
-            sensor-bindings = <&enc_msc_vert>, <&enc_msc_hori>;
+            sensor-bindings =
+                <&inc_dec_kp C_AC_SCROLL_UP K_SCROLL_DOWN>,
+                <&enc_msc_hori>;
         };
 
         r_pinky {
@@ -378,6 +380,15 @@
             >;
 
             label = "FUNCTION";
+        };
+
+        GAMERS {
+            bindings = <
+        &trans  &kp N1  &kp N2  &kp N3  &trans                  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &kp A   &kp W   &kp D   &trans                  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &kp Q   &kp S   &kp E   &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+                        &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+            >;
         };
     };
 };

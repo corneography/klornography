@@ -1,0 +1,368 @@
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+
+//                               █         █    █            ▄▄▄▀▀▀▀▀▀▄▄▄        █▀▀▀▀▀▀▀▀▀▀█
+//                               █        █     █          ▄▀            ▀▄      █          █
+//                               █       █      █        ▄▀                ▀▄    █          █
+//                               █      █       █        █                  █    █          █
+//                               █     █        █       █                    █   █          █
+//                               █    █         █       █                    █   █▄▄▄▄▄▄▄▄▄▄█
+//                               █   █ █        █       █                    █   █      █
+//                               █  █   █       █        █                  █    █       █
+//                               █ █     █      █        ▀▄                ▄▀    █        █
+//                               ██       █     █          ▀▄            ▄▀      █         █
+//                               █         █    █▄▄▄▄▄▄▄▄    ▀▀▀▄▄▄▄▄▄▀▀▀        █          █
+//
+// ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+
+
+#define BASE   0
+#define LOWER  1
+#define RAISE  2
+#define ADJUST 3
+
+/ {
+    behaviors {
+        hm: homerow_mods {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOMEROW_MODS";
+            #binding-cells = <2>;
+            tapping-term-ms = <150>;
+            quick_tap_ms = <0>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+        };
+    };
+
+    combos {
+        compatible = "zmk,combos";
+
+        copycombo {
+            bindings = <&kp LC(C)>;
+            key-positions = <13 14>;
+            timeout-ms = <30>;
+            layers = <0>;
+        };
+
+        pastecombo {
+            bindings = <&kp LC(V)>;
+            key-positions = <14 25>;
+            timeout-ms = <30>;
+            require-prior-idle-ms = <30>;
+            layers = <0>;
+        };
+
+        cutcombo {
+            bindings = <&kp LC(X)>;
+            key-positions = <13 3>;
+            timeout-ms = <30>;
+            require-prior-idle-ms = <30>;
+            layers = <0>;
+        };
+
+        savecombo {
+            bindings = <&kp LC(S)>;
+            key-positions = <13 12>;
+            timeout-ms = <30>;
+            require-prior-idle-ms = <30>;
+            layers = <0>;
+        };
+
+        undocombo {
+            bindings = <&kp LC(Z)>;
+            key-positions = <24 25>;
+            timeout-ms = <30>;
+            require-prior-idle-ms = <30>;
+            layers = <0>;
+        };
+
+        redocombo {
+            bindings = <&kp LC(LS(Z))>;
+            key-positions = <24 26>;
+            timeout-ms = <30>;
+            require-prior-idle-ms = <30>;
+            layers = <0>;
+        };
+
+        LOWERredoycombo {
+            bindings = <&kp LC(Y)>;
+            key-positions = <24 26>;
+            timeout-ms = <30>;
+            require-prior-idle-ms = <30>;
+            layers = <1>;
+        };
+
+        alttab {
+            bindings = <&kp LA(TAB)>;
+            key-positions = <14 11>;
+            timeout-ms = <30>;
+            require-prior-idle-ms = <30>;
+            layers = <0>;
+        };
+
+        clipboardpaste {
+            bindings = <&kp LC(GRAVE)>;
+            key-positions = <14 24>;
+            timeout-ms = <30>;
+            require-prior-idle-ms = <30>;
+            layers = <0>;
+        };
+
+        gdlcopycombo {
+            bindings = <&gallerydlcopy>;
+            key-positions = <3 4>;
+            timeout-ms = <30>;
+            require-prior-idle-ms = <30>;
+            layers = <0>;
+        };
+
+        gdlpastecombo {
+            bindings = <&gallerydlpaste>;
+            key-positions = <14 15>;
+            timeout-ms = <30>;
+            require-prior-idle-ms = <30>;
+            layers = <0>;
+        };
+
+        entercombo {
+            bindings = <&kp ENTER>;
+            key-positions = <25 26>;
+            timeout-ms = <30>;
+            require-prior-idle-ms = <30>;
+            layers = <0>;
+        };
+
+        ctrlbksp {
+            bindings = <&kp LC(BACKSPACE)>;
+            key-positions = <17 18>;
+            timeout-ms = <30>;
+            require-prior-idle-ms = <30>;
+            layers = <0>;
+        };
+
+        ctrlcombo {
+            bindings = <&kp LC(A)>;
+            key-positions = <14 12>;
+            timeout-ms = <30>;
+            layers = <0>;
+        };
+
+        LPINKYtabright {
+            bindings = <&kp LC(TAB)>;
+            key-positions = <13 14>;
+            timeout-ms = <30>;
+            require-prior-idle-ms = <30>;
+            layers = <3>;
+        };
+
+        LPINKYtableft {
+            bindings = <&kp LC(LS(TAB))>;
+            key-positions = <12 13>;
+            timeout-ms = <30>;
+            require-prior-idle-ms = <30>;
+            layers = <3>;
+        };
+
+        LPINKYtabclose {
+            bindings = <&kp LC(W)>;
+            key-positions = <12 14>;
+            timeout-ms = <30>;
+            require-prior-idle-ms = <30>;
+            layers = <3>;
+        };
+
+        LPINKYtabreopen {
+            bindings = <&kp LC(LS(T))>;
+            key-positions = <14 25>;
+            timeout-ms = <30>;
+            require-prior-idle-ms = <30>;
+            layers = <3>;
+        };
+
+        LPINKYtabnew {
+            bindings = <&kp LC(T)>;
+            key-positions = <25 26>;
+            timeout-ms = <30>;
+            require-prior-idle-ms = <30>;
+            layers = <3>;
+        };
+
+        LPINKYrefresh {
+            bindings = <&kp K_REFRESH>;
+            key-positions = <1 3>;
+            timeout-ms = <30>;
+            require-prior-idle-ms = <30>;
+            layers = <3>;
+        };
+
+        comboaltf4 {
+            bindings = <&kp LA(F4)>;
+            key-positions = <14 38>;
+            timeout-ms = <30>;
+            require-prior-idle-ms = <30>;
+            layers = <0>;
+        };
+
+        FLASHMODE {
+            bindings = <&bootloader>;
+            key-positions = <10 21>;
+            timeout-ms = <30>;
+            require-prior-idle-ms = <30>;
+            layers = <5>;
+        };
+    };
+
+    macros {
+        gallerydlcopy: gallerydlcopy {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(C) &kp LA(TAB)>;
+            label = "GALLERYDLCOPY";
+        };
+
+        gallerydlpaste: gallerydlpaste {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(V) &kp SPACE &kp LA(TAB)>;
+            label = "GALLERYDLPASTE";
+        };
+    };
+
+    keymap {
+        compatible = "zmk,keymap";
+
+        // ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+
+        base_layer {
+            // ┌───────────────────────────────────────────────────────────┐
+
+            label = "BASE";
+
+            // └───────────────────────────────────────────────────────────┘
+            /*           ┌─────────┬─────────┬─────────┬─────────┬─────────┐                    ┌─────────┬─────────┬─────────┬─────────┬─────────┐
+             │    Q    │    W    │    F    │    P    │    G    │                    │    J    │    L    │    U    │    Y    │    ;    │   
+   ┌─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤                    ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┐
+   │   TAB   │    A    │    R    │    S    │    T    │    D    │                    │    H    │    N    │    E    │    I    │    O    │    "    │
+   ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤╭────────╮╭────────╮├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤
+   │   DEL   │    Z    │    X    │    C    │    V    │    B    ││  MUTE  ││PLY/PSE ││    K    │    M    │    ,    │    .    │    /    │    \    │
+   └─────────┴─────────┴─────────┼─────────┼─────────┼─────────┼╰────────╯╰────────╯┼─────────┼─────────┼─────────┼─────────┴─────────┴─────────┘
+                                 │  CTRL   │  LOWER  │  SPACE  │   ALT   ││ CMD/WIN │  ENTER  │  RAISE  │  BSPCE  │  
+                                 └─────────┴─────────┴─────────┴─────────┘└─────────┴─────────┴─────────┴─────────┘ */
+
+            bindings = <
+           &kp P    &kp C  &kp L         &kp M      &kp V                                      &kp APOSTROPHE   &kp U      &kp O          &kp Y  &kp F
+&kp TAB    &lt 3 N  &kp S  &kp R         &kp T      &kp D                                      &kp DOT          &kp A      &kp E          &kp I  &lt 4 H  &kp SQT
+&kp LCTRL  &kp B    &kp G  &kp X         &kp W      &kp Z        &trans              &trans    &kp FSLH         &kp COMMA  &kp Q          &kp J  &kp K    &kp BSLH
+                           &lt 5 ESCAPE  &kp LSHFT  &lt 1 SPACE  &mt LALT BACKSPACE  &kp LGUI  &lt 2 BACKSPACE  &kp ENTER  &kp RIGHT_ALT
+            >;
+
+            sensor-bindings = <&inc_dec_kp RIGHT LEFT &inc_dec_kp C_VOL_UP C_VOL_DN>;
+        };
+
+        // ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+
+        lower_layer {
+            // ┌───────────────────────────────────────────────────────────┐
+
+            label = "LOWER";
+
+            // └───────────────────────────────────────────────────────────┘
+            /*           ┌─────────┬─────────┬─────────┬─────────┬─────────┐                    ┌─────────┬─────────┬─────────┬─────────┬─────────┐
+             │         │         │    UP   │         │    {    │                    │    }    │    7    │    8    │    9    │    +    │
+   ┌─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤                    ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┐
+   │         │         │   LEFT  │  DOWN   │  RIGHT  │    [    │                    │    ]    │    4    │    5    │    6    │    -    │         │
+   ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤╭────────╮╭────────╮├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤
+   │         │         │   P UP  │ C LOCK  │ P DOWN  │    (    ││        ││        ││    )    │    1    │    2    │    3    │    *    │         │
+   └─────────┴─────────┴─────────┼─────────┼─────────┼─────────┼╰────────╯╰────────╯┼─────────┼─────────┼─────────┼─────────┴─────────┴─────────┘
+                                 │         │         │         │         ││         │         │    0    │         │  
+                                 └─────────┴─────────┴─────────┴─────────┘└─────────┴─────────┴─────────┴─────────┘ */
+
+            bindings = <
+              &kp LG(LS(S))   &kp N1  &kp N2  &kp N3  &kp DEL                   &trans          &kp KP_N7  &kp KP_N8  &kp KP_N9  &kp KP_PLUS
+&kp CAPSLOCK  &kp LEFT_SHIFT  &kp N4  &kp N5  &kp N6  &kp BSPC                  &kp KP_NUMLOCK  &kp KP_N4  &kp KP_N5  &kp KP_N6  &kp KP_MINUS     &trans
+&trans        &kp PERIOD      &kp N7  &kp N8  &kp N9  &kp N0    &trans  &trans  &kp KP_N0       &kp KP_N1  &kp KP_N2  &kp KP_N3  &kp KP_MULTIPLY  &trans
+                                      &trans  &trans  &trans    &trans  &trans  &trans          &trans     &trans
+            >;
+
+            sensor-bindings = <&inc_dec_kp RIGHT LEFT &inc_dec_kp C_VOL_UP C_VOL_DN>;
+        };
+
+        // ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+
+        raise_layer {
+            // ┌───────────────────────────────────────────────────────────┐
+
+            label = "RAISE";
+
+            // └───────────────────────────────────────────────────────────┘
+            /*           ┌─────────┬─────────┬─────────┬─────────┬─────────┐                    ┌─────────┬─────────┬─────────┬─────────┬─────────┐
+             │         │         │         │         │         │                    │         │         │    Ü    │         │         │
+   ┌─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤                    ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┐
+   │    Ä    │         │    ß    │         │         │         │                    │         │         │         │         │    Ö    │         │
+   ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤╭────────╮╭────────╮├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤
+   │         │         │         │         │         │         ││        ││        ││         │         │         │         │         │         │
+   └─────────┴─────────┴─────────┼─────────┼─────────┼─────────┼╰────────╯╰────────╯┼─────────┼─────────┼─────────┼─────────┴─────────┴─────────┘
+                                 │ ADJUST  │         │         │         ││         │         │         │         │  
+                                 └─────────┴─────────┴─────────┴─────────┘└─────────┴─────────┴─────────┴─────────┘ */
+
+            bindings = <
+        &trans  &trans     &trans     &trans     &trans                  &trans  &trans    &trans    &trans    &trans
+&trans  &trans  &kp GRAVE  &kp EQUAL  &kp MINUS  &trans                  &trans  &kp LBKT  &kp RBKT  &kp BSLH  &trans  &trans
+&trans  &trans  &trans     &trans     &kp SEMI   &trans  &trans  &trans  &trans  &trans    &trans    &trans    &trans  &trans
+                           &trans     &trans     &trans  &trans  &trans  &trans  &trans    &trans
+            >;
+
+            sensor-bindings = <&inc_dec_kp RIGHT LEFT &inc_dec_kp C_VOL_UP C_VOL_DN>;
+        };
+
+        // ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+
+        l_pinky {
+            // ┌───────────────────────────────────────────────────────────┐
+
+            label = "LPINKY";
+
+            // └───────────────────────────────────────────────────────────┘
+            /*           ┌─────────┬─────────┬─────────┬─────────┬─────────┐                    ┌─────────┬─────────┬─────────┬─────────┬─────────┐
+             │         │         │         │         │         │                    │         │         │         │         │         │
+   ┌─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤                    ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┐
+   │         │         │         │         │         │         │                    │         │         │         │         │         │         │
+   ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤╭────────╮╭────────╮├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤
+   │         │         │         │         │         │         ││        ││        ││         │         │         │         │         │         │
+   └─────────┴─────────┴─────────┼─────────┼─────────┼─────────┼╰────────╯╰────────╯┼─────────┼─────────┼─────────┼─────────┴─────────┴─────────┘
+                                 │         │         │         │         ││         │         │         │         │  
+                                 └─────────┴─────────┴─────────┴─────────┘└─────────┴─────────┴─────────┴─────────┘ */
+
+            bindings = <
+        &trans  &kp C_PREV  &kp UP     &kp K_FORWARD  &trans                   &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &kp LEFT    &kp DOWN   &kp RIGHT      &trans                   &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &kp HOME    &kp PG_UP  &kp PG_DN      &kp END  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+                            &trans     &trans         &trans   &trans  &trans  &trans  &trans  &trans
+            >;
+
+            sensor-bindings = <&inc_dec_kp RIGHT LEFT &inc_dec_kp C_VOL_UP C_VOL_DN>;
+        };
+
+        r_pinky {
+            bindings = <
+        &trans  &trans  &trans  &trans  &trans                  &trans  &trans            &trans        &trans              &trans
+&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &kp K_PLAY_PAUSE  &kp C_REWIND  &kp C_FAST_FORWARD  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans            &trans        &trans              &trans  &trans
+                        &trans  &trans  &trans  &trans  &trans  &trans  &trans            &trans
+            >;
+
+            label = "RPINKY";
+        };
+
+        f_layer {
+            bindings = <
+        &kp F1  &kp F2   &kp F3   &kp F4   &trans                  &trans      &trans        &trans        &trans        &trans
+&trans  &kp F5  &kp F6   &kp F7   &kp F8   &trans                  &trans      &trans        &trans        &trans        &trans        &trans
+&trans  &kp F9  &kp F10  &kp F11  &kp F12  &trans  &trans  &trans  &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
+                         &trans   &trans   &trans  &trans  &trans  &trans      &trans        &trans
+            >;
+
+            label = "FUNCTION";
+        };
+    };
+};

@@ -1,0 +1,4 @@
+name: zmk-keyboard-kiiboard
+build:
+  settings:
+    board_root: .

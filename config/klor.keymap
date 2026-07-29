@@ -125,7 +125,7 @@
 
         gdlcopycombo {
             bindings = <&gallerydlcopy>;
-            key-positions = <3 4>;
+            key-positions = <>;
             timeout-ms = <30>;
             require-prior-idle-ms = <30>;
             layers = <0>;
@@ -133,7 +133,7 @@
 
         gdlpastecombo {
             bindings = <&gallerydlpaste>;
-            key-positions = <14 15>;
+            key-positions = <>;
             timeout-ms = <30>;
             require-prior-idle-ms = <30>;
             layers = <0>;

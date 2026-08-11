@@ -212,7 +212,7 @@
 
         comboaltf4 {
             bindings = <&kp LA(F4)>;
-            key-positions = <14 38>;
+            key-positions = <>;
             timeout-ms = <30>;
             require-prior-idle-ms = <30>;
             layers = <0>;

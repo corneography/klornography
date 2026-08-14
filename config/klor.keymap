@@ -225,6 +225,38 @@
             require-prior-idle-ms = <30>;
             layers = <5>;
         };
+
+        shiftbksp {
+            bindings = <&kp LS(BACKSPACE)>;
+            key-positions = <17 19>;
+            timeout-ms = <30>;
+            require-prior-idle-ms = <30>;
+            layers = <0>;
+        };
+
+        ctrllarrow {
+            bindings = <&kp LC(LEFT_ARROW)>;
+            key-positions = <31 32>;
+            timeout-ms = <30>;
+            require-prior-idle-ms = <30>;
+            layers = <0>;
+        };
+
+        ctrlrarrow {
+            bindings = <&kp LC(RIGHT)>;
+            key-positions = <32 33>;
+            timeout-ms = <30>;
+            require-prior-idle-ms = <30>;
+            layers = <0>;
+        };
+
+        homeend {
+            bindings = <&kp LC(RIGHT)>;
+            key-positions = <33 31>;
+            timeout-ms = <30>;
+            require-prior-idle-ms = <30>;
+            layers = <0>;
+        };
     };
 
     macros {

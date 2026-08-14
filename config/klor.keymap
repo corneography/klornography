@@ -250,8 +250,8 @@
             layers = <0>;
         };
 
-        homeend {
-            bindings = <&kp LC(RIGHT)>;
+        combohomeend {
+            bindings = <&homeend>;
             key-positions = <33 31>;
             timeout-ms = <30>;
             require-prior-idle-ms = <30>;
@@ -272,6 +272,13 @@
             #binding-cells = <0>;
             bindings = <&kp LC(V) &kp SPACE &kp LA(TAB)>;
             label = "GALLERYDLPASTE";
+        };
+
+        homeend: homeend {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp HOME &kp END>;
+            label = "HOMEEND";
         };
     };
 

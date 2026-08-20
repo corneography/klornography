@@ -223,7 +223,7 @@
             key-positions = <10 21>;
             timeout-ms = <30>;
             require-prior-idle-ms = <30>;
-            layers = <5>;
+            layers = <6>;
         };
 
         shiftbksp {
@@ -315,8 +315,6 @@
                 <&inc_dec_kp RIGHT LEFT>;
         };
 
-        // ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
-
         lower_layer {
             // ┌───────────────────────────────────────────────────────────┐
 
@@ -343,8 +341,6 @@
             sensor-bindings = <&inc_dec_kp RIGHT LEFT &inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
 
-        // ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
-
         raise_layer {
             // ┌───────────────────────────────────────────────────────────┐
 
@@ -370,8 +366,6 @@
 
             sensor-bindings = <&inc_dec_kp RIGHT LEFT &inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
-
-        // ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
 
         l_pinky {
             // ┌───────────────────────────────────────────────────────────┐
@@ -412,13 +406,23 @@
 
         f_layer {
             bindings = <
-        &kp F1  &kp F2   &kp F3   &kp F4   &trans                  &trans      &trans        &trans        &trans        &trans
-&trans  &kp F5  &kp F6   &kp F7   &kp F8   &trans                  &trans      &trans        &trans        &trans        &trans        &trans
-&trans  &kp F9  &kp F10  &kp F11  &kp F12  &trans  &trans  &trans  &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
-                         &trans   &trans   &trans  &trans  &trans  &trans      &trans        &trans
+        &kp F1  &kp F2   &kp F3   &kp F4   &trans                  &trans  &kp F13  &kp F14  &kp F15  &kp F16
+&trans  &kp F5  &kp F6   &kp F7   &kp F8   &trans                  &trans  &kp F17  &kp F18  &kp F19  &kp F20  &trans
+&trans  &kp F9  &kp F10  &kp F11  &kp F12  &trans  &trans  &trans  &trans  &kp F21  &kp F22  &kp F23  &kp F24  &trans
+                         &trans   &trans   &trans  &trans  &trans  &trans  &trans   &trans
             >;
 
             label = "FUNCTION";
+        };
+
+        c_layer {
+            label = "CONFIG";
+            bindings = <
+        &trans  &trans  &trans  &trans  &trans                  &trans      &trans        &trans        &trans        &trans
+&trans  &trans  &trans  &trans  &trans  &trans                  &trans      &trans        &trans        &trans        &trans        &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
+                        &trans  &trans  &trans  &trans  &trans  &trans      &trans        &trans
+            >;
         };
 
         GAMERS {

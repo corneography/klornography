@@ -304,10 +304,10 @@
                                  └─────────┴─────────┴─────────┴─────────┘└─────────┴─────────┴─────────┴─────────┘ */
 
             bindings = <
-           &kp P    &kp C  &kp L         &kp M      &kp V                                      &kp X            &kp U      &kp O          &kp Y  &kp F
-&kp TAB    &lt 3 N  &kp S  &kp R         &kp T      &kp D                                      &kp DOT          &kp A      &kp E          &kp I  &kp H  &kp Z
-&kp LCTRL  &kp B    &kp G  &kp Q         &kp W      &kp MINUS    &kp C_PLAY_PAUSE    &trans    &kp FSLH         &kp COMMA  &kp APOS       &kp J  &kp K  &kp SEMICOLON
-                           &lt 5 ESCAPE  &kp LSHFT  &lt 1 SPACE  &mt LALT BACKSPACE  &kp LGUI  &lt 2 BACKSPACE  &kp ENTER  &kp RIGHT_ALT
+           &kp P    &kp C  &kp L         &kp M      &kp V                                      &kp X            &kp U      &kp O     &kp Y  &kp F
+&kp TAB    &lt 3 N  &kp S  &kp R         &kp T      &kp D                                      &kp DOT          &kp A      &kp E     &kp I  &kp H  &kp Z
+&kp LCTRL  &kp B    &kp G  &kp Q         &kp W      &kp MINUS    &kp C_PLAY_PAUSE    &trans    &kp FSLH         &kp COMMA  &kp APOS  &kp J  &kp K  &kp SEMICOLON
+                           &lt 5 ESCAPE  &kp LSHFT  &lt 1 SPACE  &mt LALT BACKSPACE  &kp LGUI  &lt 2 BACKSPACE  &kp ENTER  &mo 6
             >;
 
             sensor-bindings =

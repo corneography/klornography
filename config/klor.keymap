@@ -104,7 +104,7 @@
             key-positions = <24 26>;
             timeout-ms = <30>;
             require-prior-idle-ms = <30>;
-            layers = <1>;
+            layers = <2>;
         };
 
         alttab {
@@ -167,7 +167,7 @@
             key-positions = <13 14>;
             timeout-ms = <30>;
             require-prior-idle-ms = <30>;
-            layers = <3>;
+            layers = <4>;
         };
 
         LPINKYtableft {
@@ -175,7 +175,7 @@
             key-positions = <12 13>;
             timeout-ms = <30>;
             require-prior-idle-ms = <30>;
-            layers = <3>;
+            layers = <4>;
         };
 
         LPINKYtabclose {
@@ -183,7 +183,7 @@
             key-positions = <12 14>;
             timeout-ms = <30>;
             require-prior-idle-ms = <30>;
-            layers = <3>;
+            layers = <4>;
         };
 
         LPINKYtabreopen {
@@ -191,7 +191,7 @@
             key-positions = <14 25>;
             timeout-ms = <30>;
             require-prior-idle-ms = <30>;
-            layers = <3>;
+            layers = <4>;
         };
 
         LPINKYtabnew {
@@ -199,7 +199,7 @@
             key-positions = <25 26>;
             timeout-ms = <30>;
             require-prior-idle-ms = <30>;
-            layers = <3>;
+            layers = <4>;
         };
 
         LPINKYrefresh {
@@ -207,7 +207,7 @@
             key-positions = <1 3>;
             timeout-ms = <30>;
             require-prior-idle-ms = <30>;
-            layers = <3>;
+            layers = <4>;
         };
 
         comboaltf4 {
@@ -223,7 +223,7 @@
             key-positions = <10 21>;
             timeout-ms = <30>;
             require-prior-idle-ms = <30>;
-            layers = <6>;
+            layers = <7>;
         };
 
         shiftbksp {
@@ -304,15 +304,24 @@
                                  └─────────┴─────────┴─────────┴─────────┘└─────────┴─────────┴─────────┴─────────┘ */
 
             bindings = <
-           &kp P    &kp C  &kp L         &kp M      &kp V                                      &kp X            &kp U      &kp O     &kp Y  &kp F
-&kp TAB    &lt 3 N  &kp S  &kp R         &kp T      &kp D                                      &kp DOT          &kp A      &kp E     &kp I  &kp H  &kp Z
-&kp LCTRL  &kp B    &kp G  &kp Q         &kp W      &kp MINUS    &kp C_PLAY_PAUSE    &trans    &kp FSLH         &kp COMMA  &kp APOS  &kp J  &kp K  &kp SEMICOLON
-                           &lt 5 ESCAPE  &kp LSHFT  &lt 1 SPACE  &mt LALT BACKSPACE  &kp LGUI  &lt 2 BACKSPACE  &kp ENTER  &mo 6
+           &kp P    &kp C  &kp L         &kp M      &kp V                                              &kp X            &kp U      &kp O     &kp Y  &kp F
+&kp TAB    &lt 4 N  &kp S  &kp R         &kp T      &kp D                                              &kp DOT          &kp A      &kp E     &kp I  &kp H  &kp Z
+&kp LCTRL  &kp B    &kp G  &kp Q         &kp W      &kp MINUS    &kp C_MUTE          &kp C_PLAY_PAUSE  &kp FSLH         &kp COMMA  &kp APOS  &kp J  &kp K  &kp SEMICOLON
+                           &lt 6 ESCAPE  &kp LSHFT  &lt 2 SPACE  &mt LALT BACKSPACE  &kp LGUI          &lt 3 BACKSPACE  &kp ENTER  &mo 7
             >;
 
             sensor-bindings =
                 <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>,
-                <&inc_dec_kp RIGHT LEFT>;
+                <&inc_dec_kp C_NEXT C_PREV>;
+        };
+
+        nolayer {
+            bindings = <
+           &kp P  &kp C  &kp L    &kp M      &kp V                          &kp X      &kp U      &kp O     &kp Y  &kp F
+&kp TAB    &kp N  &kp S  &kp R    &kp T      &kp D                          &kp COMMA  &kp A      &kp E     &kp I  &kp H  &kp Z
+&kp LCTRL  &kp B  &kp G  &kp Q    &kp W      &kp MINUS  &trans    &trans    &kp FSLH   &kp DOT    &kp APOS  &kp J  &kp K  &kp SEMI
+                         &kp ESC  &kp LSHFT  &kp SPACE  &kp LALT  &kp RGUI  &kp BSPC   &kp ENTER  &to 7
+            >;
         };
 
         lower_layer {
@@ -390,7 +399,9 @@
                           &trans    &trans     &trans  &trans  &trans  &trans  &trans  &trans
             >;
 
-            sensor-bindings = <&enc_msc_vert>, <&enc_msc_hori>;
+            sensor-bindings =
+                <&inc_dec_kp RIGHT LEFT>,
+                <&inc_dec_kp PERIOD COMMA>;
         };
 
         r_pinky {
@@ -418,19 +429,10 @@
         c_layer {
             label = "CONFIG";
             bindings = <
-        &trans  &trans  &trans  &trans  &trans                  &trans      &trans        &trans        &trans        &trans
+        &to 1   &trans  &trans  &trans  &trans                  &trans      &trans        &trans        &trans        &trans
 &trans  &trans  &trans  &trans  &trans  &trans                  &trans      &trans        &trans        &trans        &trans        &trans
 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
                         &trans  &trans  &trans  &trans  &trans  &trans      &trans        &trans
-            >;
-        };
-
-        nolayer {
-            bindings = <
-           &kp P  &kp C  &kp L    &kp M      &kp V                          &kp X      &kp U      &kp O     &kp Y  &kp F
-&kp TAB    &kp N  &kp S  &kp R    &kp T      &kp D                          &kp COMMA  &kp A      &kp E     &kp I  &kp H  &kp Z
-&kp LCTRL  &kp B  &kp G  &kp Q    &kp W      &kp MINUS  &trans    &trans    &kp FSLH   &kp DOT    &kp APOS  &kp J  &kp K  &kp SEMI
-                         &kp ESC  &kp LSHFT  &kp SPACE  &kp LALT  &kp RGUI  &kp BSPC   &kp ENTER  &trans
             >;
         };
     };

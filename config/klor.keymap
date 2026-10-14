@@ -317,11 +317,13 @@
 
         nolayer {
             bindings = <
-           &kp P  &kp C  &kp L    &kp M      &kp V                          &kp X      &kp U      &kp O     &kp Y  &kp F
-&kp TAB    &kp N  &kp S  &kp R    &kp T      &kp D                          &kp COMMA  &kp A      &kp E     &kp I  &kp H  &kp Z
-&kp LCTRL  &kp B  &kp G  &kp Q    &kp W      &kp MINUS  &trans    &trans    &kp FSLH   &kp DOT    &kp APOS  &kp J  &kp K  &kp SEMI
-                         &kp ESC  &kp LSHFT  &kp SPACE  &kp LALT  &kp RGUI  &kp BSPC   &kp ENTER  &to 7
+           &kp P  &kp C  &kp L    &kp M      &kp V                            &kp X      &kp U      &kp O     &kp Y  &kp F
+&kp TAB    &kp N  &kp S  &kp R    &kp T      &kp D                            &kp COMMA  &kp A      &kp E     &kp I  &kp H  &kp Z
+&kp LCTRL  &kp B  &kp G  &kp Q    &kp W      &kp MINUS  &kp K_MUTE  &tog 0    &kp FSLH   &kp DOT    &kp APOS  &kp J  &kp K  &kp SEMI
+                         &kp ESC  &kp LSHFT  &kp SPACE  &kp LALT    &kp RGUI  &kp BSPC   &kp ENTER  &mo 7
             >;
+
+            sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
         };
 
         lower_layer {
